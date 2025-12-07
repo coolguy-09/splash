@@ -18,6 +18,7 @@
 
 const float min_zoom = 0.5f; // 50%
 const float max_zoom = 2.0f; // 200%
+int max_time = 100;
 
 // Clamp helper
 uint8_t clamp_to_byte(float v) {
@@ -68,6 +69,11 @@ int splash_render(const char *image_path, const char *fb_path, int duration, int
 		goto cleanup;
 	} else if (scale < min_zoom) {
 		fprintf(stderr, "Libsplash: Error: Zoom value too low\n");
+		goto cleanup;
+	}
+
+	if (duration > max_time) {
+		fprintf(stderr, "Libsplash: Error: Duration value too high\n");
 		goto cleanup;
 	}
 
@@ -186,7 +192,8 @@ int splash_render(const char *image_path, const char *fb_path, int duration, int
 		}
 	}
 
-	// Keep image on screen or handle immediate exit
+	// Keep image on screen or handle immediate exit	
+	}
 	if (duration > 0) {
 		sleep(duration);
 	}
