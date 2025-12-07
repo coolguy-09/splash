@@ -11,7 +11,7 @@ void print_usage(void) {
 	printf("  Options:\n");
 	printf("    -v, --verbose: Enable verbose messages\n");
 	printf("    -c, --clear: Clear screen before printing\n");
-	printf("    -d <seconds>, --duration <seconds>: Wait for <seconds> before exiting (=<100)\n");
+	printf("    -d <seconds>, --duration <seconds>: Wait for duration before exiting (=<100)\n");
 	printf("    -f <device>, --framebuffer <device>: Specify framebuffer device\n");
 	printf("    -z <percent>, --zoom <percent>: Specify zoom for image (50-200%)\n");
 	printf("    -h, --help: Show this help dialouge\n");
@@ -19,7 +19,7 @@ void print_usage(void) {
 }
 
 void print_version(void) {
-	printf("splash v1.0.1\n");
+	printf("splash v1.0.2\n");
 }
 
 int main(int argc, char **argv) {
