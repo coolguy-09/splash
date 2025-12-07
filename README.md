@@ -34,10 +34,10 @@ make
 ### There should be 4 files:
 ```
 splash/
-├── libsplash.so.1.0.1                   <- The library that splash uses
-├── libsplash.so.1 -> libsplash.so.1.0.1 <- Symlink to the specific major version
-├── libsplash.so -> libsplash.so.1       <- Symlink used by the linker at build time
-└── splash                               <- The final executable program
+├── libsplash.so.1.0.1                    <- The library that splash uses
+├── libsplash.so.1 -> libsplash.so.1.0.1  <- Symlink to the specific major version
+├── libsplash.so -> libsplash.so.1        <- Symlink used by the linker at build time
+└── splash                                <- The final executable program
 ```
 ### Copy the splash library, like this:
 ```bash
