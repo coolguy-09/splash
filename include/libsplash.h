@@ -6,6 +6,7 @@
 
 extern const float min_zoom;
 extern const float max_zoom;
+extern int max_time;
 
 // Clamp helper
 uint8_t clamp_to_byte(float v);
