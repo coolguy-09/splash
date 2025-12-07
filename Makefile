@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -m32 -L. -I./include/ -Os
+CFLAGS = -L. -I./include/ -Os
 LD = $(CC)
-LDFLAGS = -m32 -L. -I./include/ -Os
+LDFLAGS = -L. -I./include/ -Os
 
 LIBS = -lm
 
@@ -10,8 +10,6 @@ OBJ = src/libsplash.o
 
 PROGSRC = src/splash.c
 PROGOBJ = src/splash.o
-
-DESTDIR ?= 
 
 all: libsplash.so splash
 
