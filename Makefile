@@ -18,10 +18,10 @@ src/libsplash.o: src/libsplash.c
 	@$(CC) $(CFLAGS) -fPIC -c $< -o $@ $(LIBS)
 
 libsplash.so: $(OBJ)
-	@echo "  LD      $@.1.0.1"
-	@$(LD) $(LDFLAGS) -shared -o $@.1.0.1 $^ $(LIBS)
-	@echo "  LN      $@.1.0.1 -> $@.1"
-	@ln -sf $@.1.0 $@.1
+	@echo "  LD      $@.1.0.2"
+	@$(LD) $(LDFLAGS) -shared -o $@.1.0.2 $^ $(LIBS)
+	@echo "  LN      $@.1.0.2 -> $@.1"
+	@ln -sf $@.1.0.2 $@.1
 	@echo "  LN      $@.1 -> $@"
 	@ln -sf $@.1 $@
 
