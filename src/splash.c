@@ -11,7 +11,7 @@ void print_usage(void) {
 	printf("  Options:\n");
 	printf("    -v, --verbose: Enable verbose messages\n");
 	printf("    -c, --clear: Clear screen before printing\n");
-	printf("    -d <seconds>, --duration <seconds>: Wait for <seconds> before exiting\n");
+	printf("    -d <seconds>, --duration <seconds>: Wait for <seconds> before exiting (=<100)\n");
 	printf("    -f <device>, --framebuffer <device>: Specify framebuffer device\n");
 	printf("    -z <percent>, --zoom <percent>: Specify zoom for image (50-200%)\n");
 	printf("    -h, --help: Show this help dialouge\n");
@@ -19,7 +19,7 @@ void print_usage(void) {
 }
 
 void print_version(void) {
-	printf("splash v1.0\n");
+	printf("splash v1.0.1\n");
 }
 
 int main(int argc, char **argv) {
@@ -91,6 +91,11 @@ int main(int argc, char **argv) {
 		fprintf(stderr, "Error: Zoom value too low\n");
 		return 1;
 	}
+	
+	if (duration > max_time) {
+		fprintf(stderr, "Error: Duration value too high\n");
+		return 1;
+	}
 
 	if (image_path == NULL) {
 		fprintf(stderr, "Invalid usage, see --help for help.\n");
@@ -100,4 +105,3 @@ int main(int argc, char **argv) {
 	// Call into the library
 	return splash_render(image_path, framebuffer, duration, clear_flag, scale_factor, verbose);
 }
-
