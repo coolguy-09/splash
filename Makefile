@@ -18,9 +18,9 @@ src/libsplash.o: src/libsplash.c
 	@$(CC) $(CFLAGS) -fPIC -c $< -o $@ $(LIBS)
 
 libsplash.so: $(OBJ)
-	@echo "  LD      $@.1.0"
-	@$(LD) $(LDFLAGS) -shared -o $@.1.0 $^ $(LIBS)
-	@echo "  LN      $@.1.0 -> $@.1"
+	@echo "  LD      $@.1.0.1"
+	@$(LD) $(LDFLAGS) -shared -o $@.1.0.1 $^ $(LIBS)
+	@echo "  LN      $@.1.0.1 -> $@.1"
 	@ln -sf $@.1.0 $@.1
 	@echo "  LN      $@.1 -> $@"
 	@ln -sf $@.1 $@
@@ -34,5 +34,5 @@ splash: $(PROGOBJ)
 	@$(LD) $(LDFLAGS) -o $@ $^ $(LIBS) -lsplash
 
 clean:
-	@echo "  RM      src/libsplash.o libsplash.so libsplash.so.1 libsplash.so.1.0 src/splash.o splash"
-	@rm -f src/libsplash.o libsplash.so libsplash.so.1 libsplash.so.1.0 src/splash.o splash
+	@echo "  RM      src/libsplash.o libsplash.so libsplash.so.1 libsplash.so.1.0.1 src/splash.o splash"
+	@rm -f src/libsplash.o libsplash.so libsplash.so.1 libsplash.so.1.0.1 src/splash.o splash
